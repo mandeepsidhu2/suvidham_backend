@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  rfid: 1
+  amount: 1
+  slot_number: 1
+  location: MyString
+  razorpay_order_id: MyString
+  razorpay_payment_id: MyString
+  razorpay_signature: MyString
+  payment_verified: MyString
+  created_on: MyString
+  updated_on: MyString
+
+two:
+  id: 1
+  rfid: 1
+  amount: 1
+  slot_number: 1
+  location: MyString
+  razorpay_order_id: MyString
+  razorpay_payment_id: MyString
+  razorpay_signature: MyString
+  payment_verified: MyString
+  created_on: MyString
+  updated_on: MyString
