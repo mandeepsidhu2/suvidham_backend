@@ -18,7 +18,7 @@ class Api::V1::PaymentController < ApplicationController
 
 	end
 	def verify_rfid
-		 rfid=params[:rfid] 
+		 rfid=(ActiveSupport::JSON.decode(request.body.read))['rfid']
 		 Razorpay.setup('rzp_test_1d6tY6x9cUBF1Z', 'beilTbj2Kf1XUN19vmp1Dw4m')
 		begin
 		 		payment=Payment.where(rfid: rfid , payment_verified: "False").first
@@ -58,9 +58,9 @@ class Api::V1::PaymentController < ApplicationController
 
 
 	def verify
-		rfid=params[:rfid] 
 		Razorpay.setup('rzp_test_1d6tY6x9cUBF1Z', 'beilTbj2Kf1XUN19vmp1Dw4m')
 		razorpay_credentials_json=ActiveSupport::JSON.decode(request.body.read)
+		rfid=razorpay_credentials_json['rfid']
 		razorpay_credentials = {
 			razorpay_order_id: razorpay_credentials_json['razorpay_order_id'],
 			razorpay_payment_id: razorpay_credentials_json['razorpay_payment_id'],

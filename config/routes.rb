@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 		namespace :v1 do
 			get 'ping', to: 'health#hi'
 			post 'payment', to: 'payment#payment'
-			get 'verify_rfid',to: 'payment#verify_rfid'
+			post 'verify_rfid',to: 'payment#verify_rfid'
 			post 'verify_payment',to: 'payment#verify'
 		end
 	end
